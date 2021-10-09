@@ -3,12 +3,31 @@
 namespace Src\controller;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Src\resource\TestResource;
+use Src\usecase\TestUseCase;
 
 class TestController extends Controller
 {
-    public function app()
+    /**
+     * @var TestUseCase
+     */
+    private $testUseCase;
+
+    /**
+     * TestController constructor.
+     * @param TestUseCase $testUseCase
+     */
+    public function __construct( TestUseCase $testUseCase )
     {
-        return json_encode(['hoge'=>'fuga']);
+        $this->testUseCase = $testUseCase;
+    }
+
+    /**
+     * @return TestResource
+     */
+    public function test(): TestResource
+    {
+        $this->testUseCase->execute();
+        return new TestResource(['hoge'=>'fuga']);
     }
 }
