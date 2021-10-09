@@ -9,6 +9,6 @@ class TestController extends Controller
 {
     public function app()
     {
-        return json_encode(['test'=>'test']);
+        return json_encode(['hoge'=>'fuga']);
     }
 }

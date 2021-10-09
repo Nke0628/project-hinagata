@@ -15,7 +15,7 @@ class Cors
      */
     public function handle($request, Closure $next)
     {
-        $url = 'http://192.168.3.2:8081';
+        $url = 'http://192.168.3.2:8080';
         return $next($request)
             ->header('Access-Control-Allow-Origin', $url)
             ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')

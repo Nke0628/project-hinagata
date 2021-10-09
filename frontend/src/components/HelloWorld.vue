@@ -46,7 +46,7 @@ export default {
         getIp() {
             axios.get('http://192.168.33.10:8000/api/app')
                 .then((response) => {
-                    alert(response.data.test);
+                    alert(response.data.hoge);
                 })
                 .catch((e) => {
                     alert(e);
