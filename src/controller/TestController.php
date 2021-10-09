@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Src\controller;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SpaController extends Controller
+class TestController extends Controller
 {
     public function app()
     {
